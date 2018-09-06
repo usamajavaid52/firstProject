@@ -1,0 +1,51 @@
+<ion-header no-border no-shadow>
+  <div *ngIf="!headerTop" class="header2">
+    <img src="assets/img/detailsBar.png">
+    <p class="pHeader">{{deal.title}}</p>
+  </div>
+</ion-header>
+
+<ion-content class="content" (pan)="swipe($event)" (ionScroll)="scrollHandler($event)">
+  <div swipeAll (swipe)="swipeAll($event)" (swipeleft)="swipeLeft($event)" (swiperight)="swipeRight($event)" (swipeup)="swipeUp($event)"
+    (swipedown)="swipeDown($event)">
+    <ion-header no-border no-shadow>
+      <div *ngIf="headerTop" class="headerTop">
+        <img style="    width: 100%;
+        border: 0;
+        height: 30vh;
+        object-fit: cover;" src="{{deal.images[0]}}">
+      </div>
+      <div *ngIf="headerTop" class="header">
+        <img src="assets/img/detailsBar.png">
+        <p class="pHeaderTop">{{deal.title}}</p>
+      </div>
+
+    </ion-header>
+    <div style="opacity:0.8;padding: 10px;margin-bottom:18%">
+      <!-- <h2 class="contentH2" style="margin-top:70%">{{deal.title}}</h2> -->
+      <p style="margin-top:70%" class="content">{{deal.description}}</p>
+      <p class="content">2Scroll back up to remove the sticky effect.</p>
+      <p class="content">3Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et
+        eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae
+        nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p class="content">4Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et
+        eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae
+        nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p class="content">5Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et
+        eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae
+        nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p class="content">6Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et
+        eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae
+        nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+      <p class="content">Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et
+        eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae
+        nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+
+    </div>
+  </div>
+  <ion-fab (click)="dismiss()">
+    <button ion-fab>
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

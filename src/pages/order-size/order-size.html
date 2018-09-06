@@ -1,0 +1,65 @@
+<!--
+  Generated template for the OrderSizePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+
+  <ion-navbar hide-tabs>
+    <ion-title>Order Sizes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content" padding>
+
+  <ion-list radio-group [(ngModel)]="size">
+    <div *ngIf="rates.length>=1">
+      <ion-item *ngFor="let rate of rates let i=index" no-lines>
+        <ion-radio item-left value="{{rate?.sizeInitials}}"></ion-radio>
+        <p class="pSize" item-start>{{rate?.size|uppercase}}
+          <span>
+            <ion-badge class="badgeSize">{{rate?.serving}} persons</ion-badge>
+          </span>
+        </p>
+        <!-- <ion-label item-start> </ion-label> -->
+        <ion-label item-end text-right>Rs.{{rate?.price}} </ion-label>
+
+        <hr class="line">
+      </ion-item>
+    </div>
+    <!-- <div *ngIf="rates.length>1">
+      <ion-item *ngFor="let rate of rates" no-lines>
+        <ion-radio item-left value="{{rate}}"></ion-radio>
+        <ion-label item-start>{{rate?.size}} ({{rate?.serving}} persons)</ion-label>
+        <ion-label item-end>Rs.{{rate?.price}} </ion-label>
+
+        <hr class="line">
+      </ion-item>
+    </div> -->
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col col-6>
+      <ion-icon class="icon" ios="ios-arrow-back" md="md-arrow-back">
+
+      </ion-icon>
+      <button (click)="back()" class="btnFooterC">
+
+        Cancel
+      </button>
+    </ion-col>
+    <ion-col col-6>
+      <ion-icon class="icon" ios="ios-checkmark" md="md-checkmark">
+
+      </ion-icon>
+      <button (click)="check()" class="btnFooter">
+
+        OK
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

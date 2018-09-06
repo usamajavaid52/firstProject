@@ -1,0 +1,25 @@
+<ion-content class="contentDate" padding>
+  <h1>Filters</h1>
+  <ion-icon (click)="close()" class="cross" name="close"></ion-icon>
+  <form #f="ngForm" (ngSubmit)="apply()">
+
+    <div class="dateDiv">
+      <ion-item class="dateItem">
+        <ion-label>From </ion-label>
+        <ion-datetime displayFormat="DDDD MMM D, YYYY" max="{{currentDate}}" name="fromDate" [(ngModel)]="fromDate" required></ion-datetime>
+      </ion-item>
+      <br>
+      <ion-item class="dateItem">
+        <ion-label>Till </ion-label>
+        <ion-datetime displayFormat="DDDD MMM D, YYYY" [disabled]="!fromDate" min="{{fromDate}}" max="{{currentDate}}" name="toDate"
+          [(ngModel)]="toDate"></ion-datetime>
+      </ion-item>
+    </div>
+    <div text-center>
+      <button [disabled]="!f.valid" type="submit" ion-button class="btnFilter">
+        <ion-icon name="checkmark"></ion-icon>
+        Apply Filter
+      </button>
+    </div>
+  </form>
+</ion-content>

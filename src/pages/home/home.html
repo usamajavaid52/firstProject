@@ -1,0 +1,204 @@
+<ion-header class="header" no-border no-border-top no-border-bottom>
+  <ion-navbar>
+    <ion-row>
+      <ion-col col-10>
+        <ion-searchbar class="searchBar" scrollX="true">
+          Search
+        </ion-searchbar>
+      </ion-col>
+      <ion-col (click)="cart()" col-2>
+        <span>
+          <ion-badge *ngIf="lengthOfCart>0" class="badge" color="secondary" item-end> </ion-badge>
+          <img item-end class="cartIcon" src="assets/icon/cart.png">
+        </span>
+      </ion-col>
+    </ion-row>
+
+  </ion-navbar>
+  <div>
+    <!-- <ion-scroll class="scrollSegment" scrollX="true" overflow-scroll="false"> -->
+    <ion-segment [(ngModel)]="topBar">
+      <ion-segment-button value="menu">
+        MENU
+      </ion-segment-button>
+      <ion-segment-button value="deals">
+        DEALS
+      </ion-segment-button>
+      <ion-segment-button (click)="orderApi()" value="orders">
+        ORDERS
+      </ion-segment-button>
+      <ion-segment-button (click)="favouriteApi()" value="favourites">
+        FAVOURITES
+      </ion-segment-button>
+
+    </ion-segment>
+    <!-- </ion-scroll> -->
+  </div>
+</ion-header>
+
+<ion-content (ionScroll)="scrollHandler($event)" (isScrolling)="false">
+
+
+  <div [ngSwitch]="topBar">
+    <ion-row *ngSwitchCase="'menu'" no-margin no-padding>
+      <!-- <ion-slides loop="true">
+        <ion-slide *ngFor="let deal of deals">
+        
+          <img class="DealImg" src="{{deal.images[0]}}">
+        </ion-slide>
+        
+      </ion-slides> -->
+      <!-- <h2 class="h2-deals">{{deal.title}}</h2> -->
+      <!-- <ion-slide>
+          <h2 class="h2-deals">Deal 2</h2>
+          <img src="http://fastfoodgeek.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-14-at-7.21.13-PM-1024x441.png">
+        </ion-slide> -->
+      <div>
+        <ion-item *ngIf="user&&favourites" class="titleFavourites" no-lines>
+          Favourites
+        </ion-item>
+        <ion-scroll *ngIf="user&&favourites" class="fvrtScroll" scrollX="true">
+
+
+          <div style="display:inline-block;position:relative" *ngFor="let fav of favourites let k=index">
+
+
+
+            <div (click)="fvrtDetails(fav.itemId)" class="scrollItems" padding>
+              <b item-end class="h2-favourite">
+                <h2>{{fav.title}}</h2>
+              </b>
+              <img class="fvrt-img" src="{{fav.imageUrlArray[0]}}" alt="na">
+
+
+              <!-- <p class="food-des">{{fav[k].price}}</p> -->
+            </div>
+
+
+          </div>
+
+
+        </ion-scroll>
+        <div [ngClass]="{'categoriesDiv':item.title==='Drinks','caterGoriesDiv':item.title!='Drinks'}" *ngFor="let item of filteredCategory let i=index">
+
+          <ion-item [ngClass]="{'titleFavouritesD':item.title==='Drinks','titleFavourites':item.title!='Drinks'}" no-lines>
+
+            {{item.title}}
+
+
+          </ion-item>
+          <ion-scroll class="itemScroll" scrollX="true">
+
+
+            <div class="div-inline-block" *ngFor="let food of items let j= index">
+
+
+
+              <div [ngClass]="{'scrollItems-drink':item.title==='Drinks','scrollItems':item.title!='Drinks'}" *ngIf="item.id==food.categoryId&&food">
+
+
+                <div>
+                  <ion-card class="card" *ngIf="item.title!='Drinks'&&food.label==true">20% off</ion-card>
+                </div>
+
+
+
+                <img (click)="goToItems(food)" [ngClass]="{'drink-img':item.title==='Drinks','food-img':item.title!='Drinks'}" src="{{food.imageUrlArray[0]}}"
+                  alt="na">
+
+
+                <ion-icon id="{{food.id}}" class="heart-icon-drink" (click)="!food.fav || remove(food)" (click)="food.fav || add(food)" [ngClass]="{'ion-ios-heart':food.fav,'ion-ios-heart-outline':!food.fav}">
+                  <!-- <a *ngIf="food.fav" (click)="remove()"></a> -->
+                </ion-icon>
+                <!-- <ion-icon id="{{food.id}}" *ngIf="food.id==idd" [ngClass]="{'heart-icon-drink':item.title==='Drinks','heart-icon':item.title!='Drinks'}"
+                  name="heart-outline"></ion-icon> -->
+
+                <h2 (click)="details(food)" [ngClass]="{'h2-drink':item.title==='Drinks','h2':item.title!='Drinks'}">{{food.title}}</h2>
+
+                <b [ngClass]="{'price-drink':item.title==='Drinks','price-food':item.title!='Drinks'}">
+                  <img [ngClass]="{'bar-drink':item.title==='Drinks','bar-food':item.title!='Drinks'}" (click)="details(food)">
+                </b>
+
+                <p (click)="details(food)" [ngClass]="{'drink-des':item.title==='Drinks','food-des':item.title!='Drinks'}">{{food.description}}</p>
+
+              </div>
+
+
+            </div>
+
+
+          </ion-scroll>
+        </div>
+      </div>
+    </ion-row>
+
+
+
+    <ion-row class="favouritesSegment" *ngSwitchCase="'favourites'" padding>
+      <div *ngFor="let fav of favourites let k=index" style="position:relative" class="divFvrt">
+
+
+        <ion-icon (click)="openMenuModal(fav)" class="fvrtIcon" name="md-more"></ion-icon>
+        <div>
+          <h4 class="fvrth4">{{fav.title}}</h4>
+        </div>
+        <p (click)="fvrtDetails(fav.itemId)" class="fvrtp">Best Things</p>
+        <!-- <div class="fvrtimg" style=" background-image:url({{fav.imageUrl}}) no-repeat;"></div> -->
+        <img (click)="fvrtDetails(fav.itemId)" class="fvrtimg" src="{{fav.imageUrlArray[0]}}">
+
+
+
+      </div>
+
+    </ion-row>
+    <ion-row *ngSwitchCase="'deals'">
+      <ion-scroll class="scrollDeals" scrollY="true">
+        <div *ngFor="let deal of deals" (click)="goToDeals(deal)" class=" divOrders">
+          <img class="imgDeals" src="{{deal.images[0]}}">
+          <h4 class="h4Deals">{{deal.title}}</h4>
+        </div>
+        <!-- <div class=" divOrders" (click)="goToDeals()">
+          <img class="imgDeals" src="http://fastfoodgeek.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-14-at-7.21.13-PM-1024x441.png">
+        </div> -->
+      </ion-scroll>
+    </ion-row>
+    <ion-row *ngSwitchCase="'orders'">
+
+      <div (click)="openMap(order)" class="divOrders" *ngFor="let order of orders| sort: {property: column, order: order}; let o=index">
+        <ion-badge class="bOrder">{{order.status}}</ion-badge>
+        <h4 class="h4Orders">Rs.{{order?.subTotal}}</h4>
+        <!-- <p></p> -->
+        <img class="imgOrders" src="{{order.cartItems[0].imageUrlArray[0]}}">
+        <p class="pOrderDate">{{order?.date|date:'d MMM,y | h:mm a'}}</p>
+      </div>
+    </ion-row>
+  </div>
+
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-row>
+
+      <ion-col class=".col-footer" col-4>
+        <button (click)="goToProfile()" class="button">
+          <ion-icon class="ion-icon-footer" ios="ios-person-outline" md="md-person"></ion-icon>
+          <p class="p2-footer">Profile</p>
+        </button>
+      </ion-col>
+
+      <ion-col class=".col-footer" col-4>
+        <button (click)="goToSettings()" class="button">
+          <ion-icon class="ion-icon-footer" ios="ios-settings-outline" md="md-settings"></ion-icon>
+          <p class="p2-footer">Setting</p>
+        </button>
+      </ion-col>
+
+      <ion-col class=".col-footer" col-4>
+        <button class="button">
+          <ion-icon class="ion-icon-footer" ios="ios-notifications-outline" md="md-notifications"></ion-icon>
+          <p class="p2-footer">Notification</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer> -->

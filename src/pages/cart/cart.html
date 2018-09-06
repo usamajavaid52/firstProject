@@ -1,0 +1,83 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-label class="lTitle">Order</ion-label>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content *ngIf="cartLength>0" padding>
+
+
+  <ion-scroll class="scroll" *ngIf="cartLength>0" scrollX="true">
+    <ion-row nowrap>
+
+      <!-- linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), -->
+      <div style="position: relative;width: 35vh;margin-right:6%" *ngFor="let cart of cartItems let i=index">
+        <ion-icon (click)="removeItem(i)" class="iconClose" ios="ios-close" md="md-close"></ion-icon>
+        <ion-badge *ngIf="cart.itemQuantity>0" class="bQuantity" item-end>{{cart.itemQuantity}}</ion-badge>
+
+        <div *ngIf="cart.itemQuantity>0" (click)="editCart(i,cart)" class="cartImg">
+
+          <img src="{{cart.imageUrlArray[0]}}">
+        </div>
+        <p *ngIf="cart.itemQuantity>0" class="pTitle">{{cart.title}} ({{cart.size.sizeInitials}})</p>
+        <ion-badge *ngIf="cart.itemQuantity>0" class="bPrice">{{cart.currency}}{{cart.itemQuantity*cart.size.price}}</ion-badge>
+
+      </div>
+
+    </ion-row>
+  </ion-scroll>
+  <hr class="line">
+  <ion-list *ngIf="cartLength>0" inset no-lines>
+
+    <ion-item style="background-color:transparent;">
+      <p item-start>Subtotal</p>
+      <p item-end>Rs.{{subTotal}}</p>
+
+    </ion-item>
+
+    <ion-item style="background-color:transparent;">
+      <p item-start>Delivery fee</p>
+      <p item-end>Rs.{{deliveryFee}}</p>
+
+    </ion-item>
+
+    <ion-item style="background-color:transparent;">
+      <p item-start>GST</p>
+      <p item-end>Rs.{{gst}}</p>
+
+    </ion-item>
+    <a style="color:#00d280">Do you have a voucher?</a>
+
+    <hr>
+
+    <ion-item style="background-color:transparent;">
+      <p item-start>Total (incl GST)</p>
+      <p item-end>Rs.{{(subTotal+deliveryFee)*gst+(subTotal+deliveryFee) }}</p>
+
+    </ion-item>
+    <ion-item style="background-color:transparent;">
+      <p text-wrap wrap-text style="font-size:12px">Terms and Conditions are a set of Rules and Guidelines that a user must agree to in order to use your website or mobile
+        app .it acts as a legal contract between you (the company)who has the website or mobile app and the user whoaccess
+        your website and mobile app.</p>
+
+    </ion-item>
+
+    <Button class="btnCheckOut" (click)="checkOut()" ion-button block>Check out</Button>
+
+
+  </ion-list>
+</ion-content>
+<ion-content *ngIf="cartLength==0">
+  <div class="contentEmpty"></div>
+  <h2 class="h2Empty">
+    Cart is empty!</h2>
+</ion-content>

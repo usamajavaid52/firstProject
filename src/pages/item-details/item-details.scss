@@ -1,0 +1,446 @@
+page-item-details {
+  @import url(https://fonts.googleapis.com/css?family=Norican);
+  .back-button-text-ios,
+  .back-button-text-md {
+    /* letter-spacing: -.01em; */
+    display: none;
+  }
+  .pHead {
+    text-align: center;
+    padding-right: 10%;
+  }
+  .img {
+    width: 100vh;
+    height: 65vh;
+    border-radius: 2px;
+    // background-position: unset;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .food {
+    width: 100%;
+    height: 360px;
+    border-radius: 2px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  .p {
+    font-family: "ExtraLightSans";
+    color: white;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  .h2 {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: "ExtraLightSans";
+    font-weight: 800;
+  }
+  .pMid {
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: "ExtraLightSans";
+    padding-left: 11%;
+    padding-right: 11%;
+    height: 92px;
+    white-space: initial;
+  }
+  .footerRow {
+    background: #202028;
+    height: 48px;
+    margin-top: 30px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .starRow {
+    margin-top: 0%;
+    margin-bottom: 8%;
+  }
+  .star {
+    font-size: 1.5em;
+    color: white;
+  }
+  .formReview {
+    margin: 16px;
+  }
+  .starR {
+    font-size: 1.5em;
+    color: black;
+  }
+  .starCol {
+    // padding-right: 17vh;
+    padding-left: 35%;
+  }
+  .colicon {
+    font-size: 2.3em;
+    margin-left: 16px;
+  }
+  .xSmall {
+    font-size: 1.3em;
+  }
+  .small {
+    font-size: 1.5em;
+  }
+  .normal {
+    font-size: 1.7em;
+  }
+  .large {
+    font-size: 1.9em;
+  }
+  .xLarge {
+    font-size: 2.1em;
+    margin-top: -4px;
+  }
+  .coltext {
+    margin-top: 11px;
+    margin-left: -24px;
+  }
+  .rowBlock {
+    margin-top: 10px;
+    height: 44px;
+  }
+  .rateScroll {
+    height: 140px;
+    white-space: nowrap;
+    overflow: auto;
+    width: 100%;
+    position: absolute;
+    margin-top: 0%;
+    margin-left: -16px;
+  }
+  .select {
+    margin-top: 6.8rem;
+    font-family: "ExtraLightSans";
+    font-size: 1.8em;
+  }
+  .block {
+    width: 92px;
+    height: 90px;
+    background: #32db64;
+    border-radius: 3px;
+    margin-right: 10px;
+    color: white;
+    box-shadow: 0 12px 20px -2px grey;
+  }
+  .sizeinitBtn {
+    top: 18px;
+    position: absolute;
+    left: 16px;
+  }
+  .rowbtnsize {
+    width: 120px;
+  }
+  .imgUber {
+    padding-top: 4px;
+    padding-left: 20px;
+    height: 22.5px;
+    margin-top: 4px;
+  }
+  .blockP {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    margin-left: 10px;
+  }
+  .p1 {
+    font-family: "ExtraLightSans";
+    color: white;
+    text-align: center;
+    margin-top: 7px;
+  }
+  .ptags {
+    text-align: center;
+    margin-top: -4%;
+    margin-bottom: 2%;
+  }
+  .divRating {
+    margin-top: 145px;
+  }
+  .h2Rating {
+    font-family: "ExtraLightSans";
+    font-size: 1.8em;
+  }
+  .input {
+    // margin-left: 3vh;
+    // padding: 10px;
+    // border: ridge;
+    width: 100%;
+    height: 108px;
+    margin-top: 16px;
+    border: 1px solid #b5b2b2;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .submitBtn {
+    margin-left: 13.5%;
+    width: 75%;
+  }
+  .bar-button-default-ios,
+  .bar-button-default-md {
+    color: black;
+  }
+  .shareIconS {
+    margin-left: 80px;
+    font-size: 30px;
+    color: white;
+  }
+  .shareIcon {
+    margin-left: -10px;
+    color: white;
+    font-size: 30px;
+  }
+
+  .heart {
+    margin-left: 2vh;
+  }
+  .rateIn {
+    margin-left: 20%;
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+  .reviewH3 {
+    font-size: 2.2rem;
+    margin-top: 20%;
+    text-align: center;
+    font-family: "ExtraLight";
+  }
+  .otherReview {
+    font-style: italic;
+    font-family: "";
+    color: #5a5a5a;
+  }
+  .cartIcon {
+    float: left;
+    width: 70%;
+    margin-top: 18%;
+    margin-left: 14%;
+    position: relative;
+  }
+  .badge {
+    padding: 6px 6px;
+    border-radius: 10px;
+    position: absolute;
+    margin-left: 25px; //46%
+    margin-top: 2px;
+  }
+  .rowOrderSize {
+    height: 100px;
+    margin-bottom: -130px;
+  }
+  .colOrderSize {
+    padding: 0;
+  }
+  .chooseSize {
+    border-right: 1px solid gray;
+    height: 84px;
+    background-color: #32db64;
+  }
+  .addToCart {
+    height: 84px;
+    background-color: #202028;
+    .button-inner {
+      top: 10px;
+      position: relative;
+    }
+  }
+  .cartbtn {
+    position: absolute;
+    top: 2px;
+    font-size: 30px;
+  }
+  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    .starCol {
+      // padding-right: 15vh;
+      padding-left: 35%;
+    }
+    .colicon {
+      font: 1.7em;
+    }
+    .coltext {
+      margin-top: 7px;
+    }
+  }
+
+  ul {
+    padding: 0px;
+
+    &.rating li {
+      padding: 5px 10px !important;
+      background: none;
+      color: #ffb400;
+
+      ion-icon {
+        font-size: 30px;
+      }
+    }
+  }
+
+  @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+  fieldset,
+  label {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 20px;
+  }
+  h1 {
+    font-size: 1.5em;
+    margin: 10px;
+  }
+
+  /****** Style Star Rating Widget *****/
+
+  .rating {
+    border: none;
+    float: left;
+  }
+
+  .rating > input {
+    display: none;
+  }
+  .rating > label:before {
+    margin: 5px;
+    font-size: 1.8em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+  }
+
+  .rating > .half:before {
+    content: "\f089";
+    position: absolute;
+  }
+
+  .rating > label {
+    color: transparent;
+    float: right;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  }
+
+  /***** CSS Magic to Highlight Stars on Hover *****/
+
+  .rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+    color: #32db64;
+  } /* hover previous stars in list */
+
+  .rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+    color: #32db64;
+  }
+
+  blockquote {
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C" "\201D" "\2018" "\2019";
+  }
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 2.5em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote:after {
+    color: #ccc;
+    content: close-quote;
+    font-size: 2.5em;
+    line-height: 0.1em;
+    margin-left: 0.25em;
+    vertical-align: -0.4em;
+  }
+  blockquote p {
+    display: inline;
+    font-style: italic;
+    font-size: 18px;
+    color: #5a5a5a;
+  }
+  .gif {
+    content: url(../assets/img/ripple.gif);
+    height: 60px;
+    position: absolute;
+    opacity: 0.5;
+    z-index: 22;
+    left: -28px;
+    top: -24px;
+  }
+  //ripple
+  // .ripple,
+  // .ripple:before,
+  // .ripple:after {
+  //   display: block;
+  //   border-radius: 2px;
+  //   width: 2px;
+  //   height: 2px;
+  //   -webkit-animation: rip 6s infinite ease-out;
+  //   -moz-animation: rip 6s infinite ease-out;
+  // }
+  // .ripple {
+  //   position: absolute;
+  //   z-index: -1;
+  //   top: 40px;
+  //   left: 15px;
+  // }
+  // .ripple:before,
+  // .ripple:after {
+  //   content: "";
+  //   position: absolute;
+  // }
+  // .ripple:before {
+  //   -webkit-animation-delay: 0.2s;
+  //   -moz-animation-delay: 0.2s;
+  //   top: 5px;
+  //   left: 25px;
+  // }
+  // .ripple:after {
+  //   -webkit-animation-delay: 0.8s;
+  //   -moz-animation-delay: 0.8s;
+  //   top: 25px;
+  //   left: 0;
+  // }
+  // @-webkit-keyframes rip {
+  //   0% {
+  //     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent,
+  //       0 0 0 0 transparent;
+  //   }
+  //   15% {
+  //     box-shadow: 0 0 0 0 #45c2c5, 0 0 0 0 rgba(255, 255, 255, 0.4),
+  //       0 0 0 0 #45c2c5, 0 0 0 0 rgba(0, 0, 0, 0.08);
+  //   }
+  //   100% {
+  //     box-shadow: 0 0 40px 200px #45c2c5, 0 0 10px 210px transparent,
+  //       0 0 30px 220px #45c2c5, 0 0 5px 230px transparent;
+  //   }
+  // }
+  // @-moz-keyframes rip {
+  //   0% {
+  //     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, 0 0 0 0 transparent,
+  //       0 0 0 0 transparent;
+  //   }
+  //   15% {
+  //     box-shadow: 0 0 0 0 #45c2c5, 0 0 0 0 rgba(255, 255, 255, 0.4),
+  //       0 0 0 0 #45c2c5, 0 0 0 0 rgba(0, 0, 0, 0.08);
+  //   }
+  //   100% {
+  //     box-shadow: 0 0 40px 200px #45c2c5, 0 0 10px 210px transparent,
+  //       0 0 30px 220px #45c2c5, 0 0 5px 230px transparent;
+  //   }
+  // }
+}

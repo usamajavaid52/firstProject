@@ -1,0 +1,31 @@
+<!--
+  Generated template for the SigninPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+
+  <ion-navbar>
+    <img class="imgHead" src="assets/icon/icon1.png">
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content" padding>
+  <p class="p">Please provide your Phone number and password. </p>
+  <!-- <p class="p2">You are amoung the earliest peeps to take Delivery Services for a spin and share your thoughts with us.</p> -->
+  <form #f="ngForm" (ngSubmit)="signup()">
+    <ion-input style="margin-right: 10px;" type="number" [(ngModel)]="phoneNumber" name="phoneNumber" class="username" placeholder="Phone number"
+      required autofocus></ion-input>
+    <ion-input [(ngModel)]="password" name="password" class="password" placeholder="Password" type="password" required></ion-input>
+    <!-- <p  class="signupP">Don't have an account? Signup</p> -->
+    <button ion-button class="btnFooter" [disabled]="!f.valid" color="light" type="submit" block>Sign up</button>
+  </form>
+  <!-- <button (click)="signin()" >
+
+    Sign in
+  </button> -->
+
+</ion-content>

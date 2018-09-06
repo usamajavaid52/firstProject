@@ -1,0 +1,109 @@
+page-pre-signin {
+  .content {
+    background-color: #272731;
+  }
+  .imgHead {
+    width: 100%;
+    height: 35px;
+
+    object-fit: contain;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .btnFooter {
+    width: 90%;
+    height: 10%;
+    background-color: #00d280;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    font-family: "ExtraLightSans";
+    border-radius: 5px;
+    position: absolute;
+    bottom: 26px;
+    vertical-align: middle;
+  }
+  .p {
+    width: 100%;
+    opacity: 0.5;
+    font-family: "ExtraLightSans";
+    font-size: 125%;
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: white;
+    white-space: pre-wrap;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-right: 21px;
+    padding-left: 21px;
+  }
+  .div1 {
+    height: 6px;
+    background-color: #545467;
+    margin-right: 15px;
+    margin-left: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .div2 {
+    height: 6px;
+    background-color: #545467;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 -2px 14px -2px black;
+  }
+  .div3 {
+    height: 6px;
+    background-color: #545467;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 -2px 14px -2px black;
+  }
+  .div4 {
+    height: 48vh;
+    background-color: #545467;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 -2px 14px -2px black;
+    .innerDiv {
+      width: 100%;
+      content: url("../assets/img/firstScrollBack.png");
+      margin-top: -6.5vh;
+      -webkit-box-shadow: 0 -2px 14px -2px black;
+      box-shadow: 0 -2px 14px -2px black;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      height: 30vh;
+    }
+    .innerDiv1 {
+      content: url("../assets/img/home3.jpg");
+      width: 100%;
+      border-radius: 5px;
+      height: 30vh;
+      object-fit: cover;
+    }
+  }
+  #p1 {
+    position: absolute;
+    margin-top: -23vh;
+    width: 92%;
+    text-align: center;
+    color: white;
+    font-family: "ExtraLightSans";
+    font-size: 25px;
+    padding: 16px;
+    opacity: 0.6;
+  }
+}

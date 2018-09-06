@@ -1,0 +1,56 @@
+<div (pan)="swipe($event)" (click)="goToSlide()" class="container">
+  <div swipeAll (swipeup)="swipeUp($event)" (swipedown)="swipeDown($event)" class="upperContainer">
+    <ion-row id="progress" no-padding col-12>
+      <div *ngFor="let slide of itemsImage let j=index" class="progress-outer">
+        <div [attr.id]="'slide' + j" class="progress-inner">
+        </div>
+      </div>
+    </ion-row>
+    <p id="recText" class="recommendationText" *ngIf="itemsImage activeSlideIndex">
+      Our Recommendations
+      <br> {{activeSlideIndex+1}}/ {{itemsImage.length}}
+    </p>
+  </div>
+  <ion-slides *ngIf="itemsImage && itemsImage.length" (ionSlideDidChange)="onSlideChange(i)" autoplay="2500" speed="100">
+    <ion-slide *ngFor="let slide of items?.imageUrlArray let i = index">
+      <img style="height:height" id=imgSlider class="imgSlider" src="{{slide}}" />
+    </ion-slide>
+  </ion-slides>
+
+  <div swipeAll (swipeup)="swipeUp($event)" (swipedown)="swipeDown($event)" class="lowerContainer">
+
+    <p [ngClass]="{'pdrink':items.categoryId==='H1bdDlRrz','p':items.categoryId!='H1bdDlRrz'}" class="p">
+      {{items.description}}
+    </p>
+    <label>
+      {{items.title}}
+    </label>
+    <ion-icon id="fav" name="favorite_outline"></ion-icon>
+    <!-- <ion-icon (click)="openMenuModal()" name="md-share"></ion-icon> -->
+    <!-- <ion-icon (click)="openMenuModal(items)" id="share" ios="ios-settings" md="md-settings"></ion-icon> -->
+    <ion-row class="footerOpt">
+      <!-- style="margin-top:75%;padding-left: 10%;
+  padding-right: 10%;" -->
+      <ion-col col-3></ion-col>
+      <ion-col col-2>
+
+        <ion-icon (click)="actionsSheet(items)" id="share" name="md-share"></ion-icon>
+        <!-- <p>Share</p> -->
+      </ion-col>
+      <ion-col *ngIf="isFilled" (click)="addToFav(items)" col-2>
+        <ion-icon id="share" name="ios-heart-outline"></ion-icon>
+        <!-- <p>Add to favourites</p> -->
+      </ion-col>
+      <ion-col *ngIf="!isFilled" (click)="removeFromFav()" col-2>
+        <ion-icon id="share" ios="ios-heart" md="md-heart"></ion-icon>
+        <!-- <p>Remove from favourites</p> -->
+      </ion-col>
+      <ion-col col-2>
+        <img item-end (click)="openItems(items)" class="cartIcon" src="assets/icon/tray.png">
+      </ion-col>
+      <ion-col col-3></ion-col>
+    </ion-row>
+  </div>
+
+</div>
+<!-- <button ion-button (click)="hi()"></button> -->

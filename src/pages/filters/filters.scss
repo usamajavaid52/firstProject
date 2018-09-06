@@ -1,0 +1,37 @@
+page-filters {
+  .contentDate {
+    background-color: #272731;
+  }
+  .cross {
+    display: inline-block;
+    font-size: 2.2em;
+    padding: 16px;
+    position: absolute;
+    right: 10px;
+    top: 0%;
+    color: white;
+  }
+  h1 {
+    text-align: center;
+    color: white;
+    font-family: "ExtraLightSans";
+  }
+  .dateDiv {
+    position: absolute;
+    width: 90%;
+    top: 30%;
+  }
+  .btnFilter {
+    background-color: #00d280;
+    position: relative;
+    margin-top: 80%;
+    text-transform: none;
+    border-radius: 25px;
+  }
+  .dateItem {
+    background-color: transparent;
+  }
+  ion-datetime {
+    color: white;
+  }
+}

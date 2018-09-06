@@ -1,0 +1,36 @@
+<ion-header no-border no-shadow>
+  <ion-icon (click)="close()" class="cross" name="close"></ion-icon>
+
+
+</ion-header>
+
+
+<ion-content class="content" padding>
+  <h3 class="itemTitle">{{item.title}}({{item.size.sizeInitials}})</h3>
+  <p class="para">How many would you like to order?</p>
+  <ion-row>
+    <ion-col col-3></ion-col>
+    <ion-col col-6>
+      <div item-start class="count">
+        <span class="item-count" (click)="removeQuantity(index,item)">
+          -
+        </span>
+        <span class="item-count show-count">
+          {{item.itemQuantity}}
+        </span>
+        <span style="position: fixed;" class="item-count" (click)="addQuantity(index,item)">
+          +
+        </span>
+      </div>
+    </ion-col>
+    <ion-col col-3></ion-col>
+  </ion-row>
+  <ion-row class="btnRow">
+    <ion-col (click)="closeModal(index)" col-12>
+      <p class="pC">Remove from order</p>
+    </ion-col>
+    <ion-col col-6>
+      <p class="pA"></p>
+    </ion-col>
+  </ion-row>
+</ion-content>

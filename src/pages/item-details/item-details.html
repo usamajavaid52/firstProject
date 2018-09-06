@@ -1,0 +1,286 @@
+<!--
+  Generated template for the ItemDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+
+  <ion-navbar>
+    <ion-row>
+      <ion-col col-10>
+        <p class="pHead">{{details.title}}</p>
+      </ion-col>
+      <ion-col (click)="cart()" col-2>
+        <span>
+          <ion-badge *ngIf="lengthOfCart>0" class="badge" color="secondary" item-end> </ion-badge>
+          <img item-end class="cartIcon" src="assets/icon/cart.png">
+        </span>
+      </ion-col>
+    </ion-row>
+
+
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-row>
+
+    <div [ngClass]="{'img':details.categoryId==='H1bdDlRrz','food':details.categoryId!='H1bdDlRrz'}" [ngStyle]="{ 'background-image': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(' +details.imageUrlArray[0]+ ')'}">
+      <div>
+        <ion-row>
+          <ion-col col-6 padding>
+            <ion-col *ngIf="isFilled" (click)="addToFav(details)" class="colicon" col-12>
+              <ion-icon class="shareIcon" name="ios-heart-outline"></ion-icon>
+            </ion-col>
+            <ion-col *ngIf="!isFilled" (click)="removeFromFav()" class="colicon" col-12>
+              <ion-icon class="shareIcon" name="ios-heart"></ion-icon>
+            </ion-col>
+          </ion-col>
+          <ion-col col-6 padding>
+            <ion-col (click)="actionsSheet()" class="colicon" col-12>
+
+              <ion-icon class="shareIconS" name="md-share"></ion-icon>
+            </ion-col>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: 30%;">
+          <h2 class="h2">{{details.title}}</h2>
+          <p class="pMid">{{details.description}} </p>
+
+        </ion-row>
+        <ion-row class="starRow">
+          <ion-col col-12 class="starCol">
+            <!-- <p class="p">1.2m</p> -->
+            <!-- <ion-icon class="star" ios="ios-star" md="md-star"></ion-icon>
+            <ion-icon class="star" ios="ios-star" md="md-star"></ion-icon>
+
+            <ion-icon class="star" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            <ion-icon class="star" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            <ion-icon class="star" ios="ios-star-outline" md="md-star-outline"></ion-icon>-->
+            <ion-icon class="star" *ngIf="myRating>=1" ios="ios-star" md="md-star"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating>=2" ios="ios-star" md="md-star"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating>=3" ios="ios-star" md="md-star"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating>=4" ios="ios-star" md="md-star"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating>=5" ios="ios-star" md="md-star"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating%1!=0 && myRating" name="star-half"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating==0 ||!myRating" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating<=1||!myRating" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating<=2||!myRating" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating<=3||!myRating" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            <ion-icon class="star" *ngIf="myRating<=4||!myRating" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+          </ion-col>
+
+        </ion-row>
+        <ion-row (click)="loadImages(details)" class="footerRow">
+          <ion-col col-2>
+            <div class="imgUber" style="content:url('assets/icon/arrows.png')"></div>
+            <!-- <ion-icon ios="ios-play" md="md-play"></ion-icon> -->
+          </ion-col>
+          <ion-col col-4>
+            <p class="p1">View Images</p>
+          </ion-col>
+          <ion-col col-6>
+            <!-- <p class="p1">More options(8-10 min)</p> -->
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+  </ion-row>
+
+  <h2 class="select">Tap & Select</h2>
+
+
+  <ion-row class="rowOrderSize" col-12>
+    <ion-col col-1></ion-col>
+    <ion-col class="colOrderSize" col-5>
+      <div>
+        <div class="gif"></div>
+        <button (click)="orderSizes()" class="chooseSize" ion-button block>
+          <div *ngIf="!selectedRate">Choose size</div>
+          <div *ngIf="selectedRate">
+            <ion-row class="rowbtnsize">
+              <ion-col col-2>
+                <ion-label class="sizeinitBtn">{{selectedRate.sizeInitials}}
+
+                </ion-label>
+              </ion-col>
+              <ion-col col-10>
+                <p style="margin-left:23px">
+                  <ion-icon style="font-size: 28px;position: absolute;left: 23px;top: 10px;" name="ios-people-outline"></ion-icon>{{selectedRate.serving}}
+
+                </p>
+                <p>Rs.{{selectedRate.price}}</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </button>
+      </div>
+    </ion-col>
+    <ion-col class="colOrderSize" col-5>
+      <div>
+        <button (click)="addToCart(details)" [disabled]="!selectedRate" class="addToCart" ion-button block>
+          <ion-icon class="cartbtn" name="ios-cart-outline"></ion-icon>
+          Add To Cart</button>
+      </div>
+    </ion-col>
+    <ion-col col-1></ion-col>
+    <!-- <span class="ripple"></span> -->
+    <!-- <ion-scroll class="rateScroll" scrollX="true">
+
+      <div *ngIf="details.rates.length==1">
+
+        <div style="display:inline-block" (click)="addToCart(details.rates[0], details)" class="block">
+          <div class="gif"></div>
+         
+          <ion-row class="rowBlock">
+            <ion-col class="colicon" [ngClass]="{'xSmall':details.rates[0].sizeInitials==='ES','small':details.rates[0].sizeInitials==='S','normal':details.rates[0].sizeInitials==='N','large':details.rates[0].sizeInitials==='L','xLarge':details.rates[0].sizeInitials==='EL'}"
+              col-4>
+
+              <ion-icon class="ion-ios-wineglass"></ion-icon>
+            </ion-col>
+            <ion-col class="coltext" col-8>
+              <p class="blockP">{{details.rates[0].sizeInitials|uppercase}}</p>
+            </ion-col>
+          </ion-row>
+          <p class="ptags">{{details.rates[0].serving}}</p>
+          <p class="ptags">Rs.{{details.rates[0].price}}</p>
+        </div>
+      </div>
+      <div *ngIf="details.rates.length>1">
+
+        <div style="display:inline-block" *ngFor="let r of details.rates" (click)=addToCart(r,details) class="block">
+          <div class="gif"></div>
+          <ion-row class="rowBlock">
+            <ion-col class="colicon" [ngClass]="{'xSmall':r.sizeInitials==='ES','small':r.sizeInitials==='S','normal':r.sizeInitials==='N','large':r.sizeInitials==='L','xLarge':r.sizeInitials==='EL'}"
+              col-4>
+
+              <ion-icon class="ion-ios-wineglass"></ion-icon>
+            </ion-col>
+            <ion-col class="coltext" col-8>
+              <p class="blockP">{{r.sizeInitials| uppercase}}</p>
+            </ion-col>
+          </ion-row>
+          <p class="ptags">{{r.serving}}</p>
+          <p class="ptags">Rs.{{r.price}}</p>
+        </div> -->
+    <!-- /* above part upto scroll and bellow just closing tags After Changing*/ -->
+
+    <!-- <div style="display:inline-block" class="block">
+            <ion-row class="rowBlock">
+              <ion-col class="colicon" col-4>
+
+                <ion-icon class="ion-ios-wineglass"></ion-icon>
+              </ion-col>
+              <ion-col class="coltext" col-8>
+                <p class="blockP">S</p>
+              </ion-col>
+            </ion-row>
+            <p class="ptags">1-2</p>
+            <p class="ptags">Rs.2000</p>
+          </div>
+          <div style="display:inline-block" class="block">
+            <ion-row class="rowBlock">
+              <ion-col class="colicon" col-4>
+
+                <ion-icon class="ion-ios-wineglass"></ion-icon>
+              </ion-col>
+              <ion-col class="coltext" col-8>
+                <p class="blockP">M</p>
+              </ion-col>
+            </ion-row>
+            <p class="ptags">1-2</p>
+            <p class="ptags">Rs.2000</p>
+          </div>
+          <div style="display:inline-block" class="block">
+            <ion-row class="rowBlock">
+              <ion-col class="colicon" col-4>
+
+                <ion-icon class="ion-ios-wineglass"></ion-icon>
+              </ion-col>
+              <ion-col class="coltext" col-8>
+                <p class="blockP">L</p>
+              </ion-col>
+            </ion-row>
+            <p class="ptags">1-2</p>
+            <p class="ptags">Rs.2000</p>
+          </div>
+          <div style="display:inline-block" class="block">
+            <ion-row class="rowBlock">
+              <ion-col class="colicon" col-4>
+
+                <ion-icon class="ion-ios-wineglass"></ion-icon>
+              </ion-col>
+              <ion-col class="coltext" col-8>
+                <p class="blockP">EL</p>
+              </ion-col>
+            </ion-row>
+            <p class="ptags">1-2</p>
+            <p class="ptags">Rs.2000</p>
+          </div> -->
+
+    <!-- </div>
+//closing tags
+    </ion-scroll> -->
+
+  </ion-row>
+
+
+
+  <div class="divRating">
+    <h2 class="h2Rating">Rate & Review</h2>
+    <div class="rateIn">
+      <!-- <ion-icon (click)="rateApi('1')" class="starR" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+      <ion-icon (click)="rateApi('2')" class="starR" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+      <ion-icon (click)="rateApi('3')" class="starR" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+      <ion-icon (click)="rateApi('4')" class="starR" ios="ios-star-outline" md="md-star-outline"></ion-icon>
+      <ion-icon (click)="rateApi('5')" class="starR" ios="ios-star-outline" md="md-star-outline"></ion-icon> -->
+      <fieldset class="rating">
+        <input (change)="rateApi(r5.value)" #r5 type="radio" id="star5" name="rating" value=5 />
+        <label class="full" for="star5" title="Awesome - 5 stars" disabled></label>
+
+        <input (change)="rateApi(r4.value)" #r4 type="radio" id="star4" name="rating" value=4 />
+        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+        <input (change)="rateApi(r3.value)" #r3 type="radio" id="star3" name="rating" value=3 />
+        <label class="full" for="star3" title="Meh - 3 stars"></label>
+
+        <input (change)="rateApi(r2.value)" #r2 type="radio" id="star2" name="rating" value=2 />
+        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+        <input (change)="rateApi(r1.value)" #r1 type="radio" id="star1" name="rating" value=1 />
+        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+      </fieldset>
+    </div>
+    <form class="formReview" *ngIf="reviewStatus" #f="ngForm" (ngSubmit)="reviewApi()">
+      <textarea id="textReview" class="input" [(ngModel)]="reviews" name="reviews" type="text" placeholder="Write your review here..."
+        rows="3" cols="45" required></textarea>
+      <button id="btnSubmitReview" ion-button class="submitBtn" [disabled]="!f.valid" type="submit" color="secondary">Submit</button>
+    </form>
+    <h3 class="reviewH3" *ngIf="!reviewStatus">
+      <blockquote>
+        <p>{{userReview}}</p>
+      </blockquote>
+      <!-- <i>&#10077; {{userReview}} &#10078;</i> -->
+
+    </h3>
+  </div>
+
+
+  <hr class="line">
+
+  <h2 *ngIf="moreR" class="h2Rating">More Reviews</h2>
+  <div padding *ngFor="let review of allRev | slice:0:10">
+    <p class="otherReview">{{review.review}} ~{{review.name}}</p>
+    <hr class="line">
+  </div>
+
+</ion-content>

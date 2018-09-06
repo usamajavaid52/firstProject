@@ -1,0 +1,72 @@
+page-deal-details {
+  .header {
+    margin-top: -10%;
+  }
+  .pHeaderTop {
+    position: absolute;
+    margin-top: -52px;
+    margin-left: 19px;
+    width: 132px;
+    height: 31px;
+    font-family: "ExtraLightSans";
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: left;
+    opacity: 0.8;
+    color: white;
+  }
+  .header2 {
+    margin-top: 2.8%;
+    position: fixed;
+  }
+  .pHeader {
+    position: absolute;
+    margin-top: -44px;
+    margin-left: 19px;
+    width: 132px;
+    height: 31px;
+    font-family: "ExtraLightSans";
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-align: left;
+    opacity: 0.8;
+    color: white;
+  }
+  .content {
+    margin-top: 0%;
+    background-color: white;
+    color: black;
+    font-family: "ExtraLightSans";
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2;
+    letter-spacing: 0.6px;
+    text-align: left;
+  }
+  .fab-ios {
+    background-color: #1cda99;
+  }
+  .fab-ios.activated {
+    background-color: black;
+  }
+  .fab-md.activated {
+    background-color: black;
+  }
+  .fab-md {
+    background-color: #1cda99;
+  }
+  ion-fab {
+    bottom: 1em;
+    left: 24vh;
+  }
+}

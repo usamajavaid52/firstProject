@@ -1,0 +1,26 @@
+<ion-content class="cont" padding>
+
+  <p class="head">Verification</p>
+  <h6 class="h">SMS sent, please check your mobile.</h6>
+  <!-- <hr class="midline"> -->
+
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-input class="ionInput form-control" type="number" id="b1" #input1 [(ngModel)]="one" (keyup)="changeFocus(input2)" autofocus
+      required></ion-input>
+    <ion-input class="ionInput form-control" type="number" id="b2" #input2 [(ngModel)]="two" (keyup)="changeFocus(input3)" required></ion-input>
+    <ion-input class="ionInput form-control" type="number" id="b3" #input3 [(ngModel)]="three" (keyup)="changeFocus(input4)"
+      required></ion-input>
+    <ion-input class="ionInput form-control" type="number" id="bb" #input4 [(ngModel)]="four" (keyup)='changeFocus(input4)' required></ion-input>
+    <ion-col col-2></ion-col>
+  </ion-row>
+  <button class="btn" [disabled]="!fal" ion-button (click)="verify()" block>Verify</button>
+
+  <!-- <p style="margin-bottom:10px;text-align:center">If you want to change your number.
+
+  </p>
+  <p (click)="login()" style="text-align:center">
+    <span>Click Here...</span>
+  </p> -->
+  <p (click)=resend() class="resend">Haven't received yet? Resend</p>
+</ion-content>

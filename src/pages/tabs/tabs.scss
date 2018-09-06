@@ -1,0 +1,20 @@
+page-tabs {
+  .tabs-ios .tab-button:hover:not(.disable-hover),
+  .tabs-ios .tab-button[aria-selected="true"] {
+    color: #00d280;
+  }
+  .tabs-ios .tab-button[aria-selected="true"] .tab-button-icon {
+    color: #00d280;
+  }
+  .tabs-md .tab-button[aria-selected="true"] .tab-button-icon {
+    color: #00d280;
+  }
+  .tabs-ios .tab-button[aria-selected="true"] {
+    color: #00d280;
+    padding: 0;
+  }
+  .tabs-md .tab-button[aria-selected="true"] {
+    color: #00d280;
+    padding: 0;
+  }
+}

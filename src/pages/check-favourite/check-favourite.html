@@ -1,0 +1,24 @@
+<ion-header></ion-header>
+<ion-content class="menu">
+  <ion-icon (click)="closeModal()" class="cross" name="close"></ion-icon>
+  <ion-row style="margin-top:75%;padding-left: 10%;
+  padding-right: 10%;">
+
+    <ion-col col-6>
+
+      <ion-icon (click)="actionsSheet(item)" class="menuicons" name="md-share"></ion-icon>
+      <p>Share</p>
+    </ion-col>
+    <ion-col *ngIf="isFilled" (click)="addToFav(item)" col-6>
+      <ion-icon class="menuicons" name="ios-heart-outline"></ion-icon>
+      <p>Add to favourites</p>
+    </ion-col>
+    <ion-col *ngIf="!isFilled" (click)="removeFromFav()" col-6>
+      <ion-icon class="menuicons" ios="ios-heart" md="md-heart"></ion-icon>
+      <p>Remove from favourites</p>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+<!-- (click)="shareViaWhatsApp(favouriteItems.imageUrl, favouriteItems.title)"  -->

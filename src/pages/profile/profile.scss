@@ -1,0 +1,193 @@
+page-profile {
+  .profile {
+    box-shadow: 0 0 100px 25px rgba(132, 132, 142, 0.26);
+    background-color: #00d280;
+
+    // position: fixed;
+    width: 100%;
+    z-index: 11;
+    ion-icon {
+      color: white;
+      opacity: 0.8;
+    }
+    //6s
+    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+      .dp {
+        margin: 0% 33%;
+        img {
+          margin-top: -19px;
+          border: solid 4px #ffffff;
+          width: 125px;
+          height: 125px;
+          border-radius: 50%;
+          box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    // SIII
+    @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+      .dp {
+        margin: 0% 33%;
+        img {
+          margin-top: -19px;
+          border: solid 4px #ffffff;
+          width: 125px;
+          height: 125px;
+          border-radius: 50%;
+          box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 4) {
+      .dp {
+        margin: 0% 33%;
+        img {
+          margin-top: -19px;
+          border: solid 4px #ffffff;
+          width: 125px;
+          height: 125px;
+          border-radius: 50%;
+          box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    //s5 samsung
+    @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+      .dp {
+        margin: 0% 33%;
+        img {
+          margin-top: -19px;
+          border: solid 4px #ffffff;
+          width: 125px;
+          height: 125px;
+          border-radius: 50%;
+          box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    //iPhone 6
+    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+      .dp {
+        margin: 0% 33%;
+        img {
+          margin-top: -19px;
+          border: solid 4px #ffffff;
+          width: 125px;
+          height: 125px;
+          border-radius: 50%;
+          box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+      .dp {
+        margin: 0% 30%;
+        img {
+          margin-top: -19px;
+          border: solid 4px #ffffff;
+          width: 125px;
+          height: 125px;
+          border-radius: 50%;
+          box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+
+    .header {
+      background: transparent;
+
+      padding-top: 14px;
+    }
+    .username {
+      color: white;
+      font-family: "RegularSans";
+      text-align: center;
+      opacity: 0.8;
+    }
+    .labelH {
+      color: white;
+      font-family: "RegularSans";
+      text-align: center;
+      opacity: 0.8;
+      margin-bottom: 7px;
+    }
+    .labelD {
+      color: white;
+      font-family: "RegularSans";
+      text-align: center;
+      opacity: 0.8;
+      margin-top: 0%;
+    }
+    [col-4] {
+      margin-top: 0%;
+      padding-top: 0%;
+      padding-bottom: 0%;
+    }
+  }
+  .ionItem {
+    background: transparent;
+  }
+
+  .label-ios {
+    padding: 7px 1px;
+  }
+  .heading {
+    font-family: "RegularSans";
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: #393948;
+  }
+  .details {
+    font-family: "RegularSans";
+    font-size: 12px;
+    letter-spacing: 0.1px;
+    text-align: left;
+    color: #6c6b77;
+    padding-top: 4px;
+  }
+  .next {
+    width: 8px;
+    height: 12px;
+    object-fit: contain;
+    opacity: 0.4;
+    color: #838383;
+  }
+  .line {
+    width: 366px;
+    height: 1px;
+    opacity: 0.4;
+  }
+
+  .ion-icon-footer {
+    display: inline-block;
+    font-size: 2.2em;
+    margin-left: 0%;
+  }
+  .p2-footer {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: "BoldSans";
+  }
+  .col-footer {
+    padding: 0%;
+  }
+  .button {
+    background: transparent;
+    margin-left: 22%;
+  }
+  .button:hover {
+    color: #00d280;
+  }
+  ion-footer {
+    height: 8%;
+  }
+  .col {
+    padding: 0%;
+  }
+
+  .ProfileFooter {
+    color: #00d280;
+  }
+}

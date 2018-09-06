@@ -1,0 +1,84 @@
+<ion-header></ion-header>
+<ion-content *ngIf="loaded">
+  <div swipeAll (swipeleft)="swipeLeft($event)" (swiperight)="swipeRight($event)" (swipeup)="swipeUp($event)" (swipedown)="swipeDown($event)"
+    class="profile">
+    <div>
+      <ion-item class="header" no-lines>
+        <ion-icon item-start class="ion-android-share-alt"></ion-icon>
+        <ion-icon item-end name="md-more"></ion-icon>
+      </ion-item>
+
+    </div>
+    <div class="dp">
+      <img src="assets/img/moreDetails.jpg">
+    </div>
+    <p class="username">{{user?.firstname}} {{user?.lastname}}</p>
+    <ion-row>
+      <ion-col col-4>
+        <p class="labelH">Joined</p>
+        <p class="labelD">{{userInfo?.createdAt|date:'d MMM,y '}}</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="labelH">Favourites</p>
+        <p class="labelD">{{userInfo?.favourites}}</p>
+      </ion-col>
+      <ion-col col-4>
+        <p class="labelH">Worth</p>
+        <p class="labelD">{{userInfo?.worth}}</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="divv">
+    <ion-item class="ionItem" (click)="update()" no-lines>
+      <p class="heading">Update profile</p>
+      <p class="details">update your name, email, address...</p>
+      <ion-icon class="next" item-end name="ios-arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <hr class="line">
+    <ion-item class="ionItem" no-lines>
+      <p class="heading">Wallet</p>
+      <p class="details">Rs. 0.0</p>
+      <ion-icon class="next" item-end name="ios-arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <hr class="line">
+    <!-- <ion-item class="ionItem" no-lines>
+      <p class="heading">My food preference</p>
+      <p class="details">Manage what food you like</p>
+      <ion-icon class="next" item-end name="ios-arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <hr class="line">
+    <ion-item class="ionItem" no-lines>
+      <p class="heading">My Notification & Privacy prefernces</p>
+      <p class="details">Manage settings related to notifications and privacy</p>
+      <ion-icon class="next" item-end name="ios-arrow-forward-outline"></ion-icon>
+    </ion-item>
+    <hr class="line"> -->
+  </div>
+</ion-content>
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-row>
+
+      <ion-col class=".col-footer" col-4>
+        <button id="profile" class="button">
+          <ion-icon class="ion-icon-footer" ios="ios-person-outline" md="md-person"></ion-icon>
+          <p class="p2-footer">Profile</p>
+        </button>
+      </ion-col>
+
+      <ion-col class=".col-footer" col-4>
+        <button (click)="goToSettings()" class="button">
+          <ion-icon class="ion-icon-footer" ios="ios-settings-outline" md="md-settings"></ion-icon>
+          <p class="p2-footer">Setting</p>
+        </button>
+      </ion-col>
+
+      <ion-col class=".col-footer" col-4>
+        <button class="button">
+          <ion-icon class="ion-icon-footer" ios="ios-notifications-outline" md="md-notifications"></ion-icon>
+          <p class="p2-footer">Notification</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer> -->

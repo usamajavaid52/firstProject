@@ -1,0 +1,195 @@
+page-user-info {
+  .content {
+    background-color: #272731;
+  }
+  .imgHead {
+    width: 94%;
+    height: 35px;
+
+    object-fit: contain;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .toolbar-background-md {
+    background: transparent;
+  }
+  .toolbar-background-ios {
+    background: transparent;
+  }
+  .header-ios .toolbar-background-ios {
+    border-style: none;
+    //     border-color: rgba(0, 0, 0, 0.3);
+  }
+  .header-md .toolbar-background-md {
+    border-style: none;
+    //     border-color: rgba(0, 0, 0, 0.3);
+  }
+  .bar-button-default-md,
+  .bar-button-clear-md-default,
+  .item-input .label-md,
+  .item-select .label-md,
+  .item-datetime .label-md {
+    color: #999;
+    opacity: 0.6;
+  }
+  .item-input .label-ios,
+  .item-select .label-ios,
+  .item-datetime .label-ios {
+    color: #999;
+    opacity: 0.6;
+  }
+  .bar-button-md-default {
+    color: white;
+    background-color: transparent;
+  }
+  .bar-button-default-ios,
+  .bar-button-default.bar-button-ios-default,
+  .bar-button-clear-ios-default {
+    color: white;
+    background-color: transparent;
+  }
+  .btnFooter {
+    width: 92% !important;
+    height: 10% !important;
+    background-color: #00d280;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    font-family: "ExtraLightSans";
+    border-radius: 5px;
+    position: absolute;
+    overflow: hidden;
+    vertical-align: middle;
+    // bottom: 26px;
+  }
+  //   .p2 {
+  //     width: 100%;
+
+  //     // opacity: 0.5;
+  //     font-family: "ExtraLightSans";
+  //     font-size: 100%;
+  //     font-weight: 200;
+  //     font-style: normal;
+  //     font-stretch: normal;
+  //     line-height: normal;
+  //     letter-spacing: normal;
+  //     text-align: center;
+  //     color: white;
+  //     white-space: pre-wrap;
+  //     margin-bottom: 50px;
+  //     margin-top: 0px;
+  //     padding-right: 30px;
+  //     padding-left: 30px;
+  //   }
+  .p {
+    width: 100%;
+    font-family: "ExtraLightSans";
+    font-size: 125%;
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: white;
+    white-space: pre-wrap;
+    margin-bottom: 6%;
+    margin-top: 4%;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: #999;
+    opacity: 0.5;
+  }
+  .text-input-ios,
+  .text-input-md {
+    margin: 11px 8px 11px 0;
+    padding: 0;
+    width: calc(100% - 8px);
+    color: white;
+    opacity: 1;
+  }
+  .back-button-text-ios {
+    letter-spacing: -0.01em;
+    display: none;
+  }
+  .back-button-text-md {
+    letter-spacing: -0.01em;
+    display: none;
+  }
+  .signupP {
+    text-align: right;
+    margin-top: 0;
+    font-family: "ExtraLightSans";
+    color: white;
+    /* border-bottom: solid; */
+    text-decoration: underline;
+  }
+  .datetime-md {
+    padding: 13px 8px 13px 0px;
+    opacity: 0.6;
+    color: white;
+    /* border-bottom: 1px solid; */
+    /* width: 80%; */
+  }
+  .datetime-ios {
+    padding: 13px 8px 13px 0px;
+    opacity: 0.6;
+    color: white;
+    /* border-bottom: 1px solid; */
+    /* width: 80%; */
+  }
+  .gender {
+    background: #272731;
+    color: white;
+    opacity: 0.2;
+    border: none;
+  }
+  .country {
+    // background: #272731;
+    // color: white;
+    // opacity: 0.2;
+    border: none;
+    width: 100%;
+  }
+  .item-md {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-transform: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .item-ios {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: normal;
+    text-transform: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .item-md.item-block .item-inner {
+    padding-right: 8px;
+    border-bottom: none;
+  }
+  .skip {
+    text-align: right;
+    text-decoration: underline;
+    margin-top: 20%;
+    color: white;
+  }
+}

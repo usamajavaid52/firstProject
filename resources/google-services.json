@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "991162735514",
+    "firebase_url": "https://delivery-service-428fb.firebaseio.com",
+    "project_id": "delivery-service-428fb",
+    "storage_bucket": "delivery-service-428fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991162735514:android:e2aadf03ccd4f8d3",
+        "android_client_info": {
+          "package_name": "com.hybridlogics.DeliveryServiceCustomerApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991162735514-cm3s9c1t2glrmkj222n5egphia1dvsf3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj7AQWTb0iRo3qRi8kuGe81-qMLRm4lO4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
